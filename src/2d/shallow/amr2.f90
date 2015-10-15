@@ -728,12 +728,14 @@ program amr2
     
     !parameters used
     print *, 'Parameters used:'
-    format_string="('roe_min_depth: ',1f5.5)"
+    write(*,*)
+    format_string="('roe_min_depth:  ',1f12.4)"
     write(*,format_string) roe_min_depth
-    format_string="('roe_depth_frac: ',1f5.5)"
+    format_string="('roe_depth_frac: ',1f12.4)"
     write(*,format_string) roe_depth_frac
-    format_string="('roe_mom_rat: ',1f5.5)"
+    format_string="('roe_mom_rat:    ',1f12.4)"
     write(*,format_string) roe_mom_rat
+    write(*,*)
     
     !solve counts
     format_string="('Total Solves: ',i15)"
