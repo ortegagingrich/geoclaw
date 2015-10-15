@@ -90,6 +90,9 @@ program amr2
     use amr_module, only: rprint, sprint, tprint, uprint
 
     use amr_module, only: t0, tstart_thisrun
+    
+    !for hybrid tests
+    use amr_module, only: roe_solves, full_solves, retry_solves, total_solves
 
     use regions_module, only: set_regions
     use gauges_module, only: set_gauges, num_gauges
@@ -122,6 +125,14 @@ program amr2
     character(len=*), parameter :: dbugfile = 'fort.debug'
     character(len=*), parameter :: matfile = 'fort.nplot'
     character(len=*), parameter :: parmfile = 'fort.parameters'
+    
+    
+    !just for hybrid tests
+    roe_solves = 0
+    full_solves = 0
+    retry_solves = 0
+    total_solves = 0
+    
 
     ! Open parameter and debug files
     open(dbugunit,file=dbugfile,status='unknown',form='formatted')
@@ -703,6 +714,23 @@ program amr2
     write(outunit,*)
     
     
+    
+    !hybrid test results output
+    format_string="('========================== Hybrid Test Results ==========================')"
+    write(*,format_string)
+    write(*,*)
+    format_string="('Total Solves: ',1f15.3)"
+    write(*,format_string) total_solves
+    format_string="('Roe Solves: ',1f15.3)"
+    write(*,format_string) roe_solves
+    format_string="('Full Solves: ',1f15.3)"
+    write(*,format_string) full_solves
+    format_string="('Retry Solves: ',1f15.3)"
+    write(*,format_string) retry_solves
+    write(*,*)
+    format_string="('=========================================================================')"
+    write(*,format_string)
+    write(*,*)
     
     
     !format_string = "('Total time to solution = ',1f16.8,' s, using', i3,' threads')"
