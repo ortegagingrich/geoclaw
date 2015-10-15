@@ -93,6 +93,8 @@ program amr2
     
     !for hybrid tests
     use amr_module, only: roe_solves, full_solves, retry_solves, total_solves
+    !hybrid parameters
+    use amr_module, only: roe_depth_frac, roe_min_depth, roe_mom_rat
 
     use regions_module, only: set_regions
     use gauges_module, only: set_gauges, num_gauges
@@ -132,6 +134,10 @@ program amr2
     full_solves = 0
     retry_solves = 0
     total_solves = 0
+    !Temporary: set hybrid parameters here
+    roe_depth_frac = 0.2d0
+    roe_min_depth = 2.d0
+    roe_mom_rat = 0.25d0 !maximum ratio of momentum to depth
     
 
     ! Open parameter and debug files
