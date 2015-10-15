@@ -719,13 +719,13 @@ program amr2
     format_string="('========================== Hybrid Test Results ==========================')"
     write(*,format_string)
     write(*,*)
-    format_string="('Total Solves: ',1f15.3)"
+    format_string="('Total Solves: ',i15)"
     write(*,format_string) total_solves
-    format_string="('Roe Solves: ',1f15.3)"
+    format_string="('Roe Solves:   ',i15)"
     write(*,format_string) roe_solves
-    format_string="('Full Solves: ',1f15.3)"
+    format_string="('Full Solves:  ',i15)"
     write(*,format_string) full_solves
-    format_string="('Retry Solves: ',1f15.3)"
+    format_string="('Retry Solves: ',i15)"
     write(*,format_string) retry_solves
     write(*,*)
     format_string="('=========================================================================')"
