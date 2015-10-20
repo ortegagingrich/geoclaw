@@ -56,3 +56,4 @@ COMMON_SOURCES += \
   $(GEOLIB)/fgmax_interpolate.f90 \
   $(GEOLIB)/fgmax_values.f90 \
   $(GEOLIB)/fgmax_finalize.f90 \
+  $(GEOLIB)/hybrid_parameters.f90

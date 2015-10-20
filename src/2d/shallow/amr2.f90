@@ -135,9 +135,7 @@ program amr2
     retry_solves = 0
     total_solves = 0
     !Temporary: set hybrid parameters here
-    roe_depth_frac = 0.2d0
-    roe_min_depth = 2.d0
-    roe_mom_rat = 0.25d0 !maximum ratio of momentum to depth
+    call hybrid_parameters()
     
 
     ! Open parameter and debug files
