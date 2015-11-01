@@ -7,7 +7,7 @@ subroutine hybrid_parameters()
     
     !set default values
     roe_depth_frac = 0.2d0
-    roe_min_depth = 3.d0
+    roe_min_depth = 2.d0
     roe_mom_rat = 0.25d0 !maximum ratio of momentum to depth
     
 end subroutine
